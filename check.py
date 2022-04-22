@@ -14,12 +14,19 @@ def main():
             print("\n")
             key = int(key, 16)
 
+        ask = input('Use default plaintext? (y/n)\t')
+        if ask == 'y':
+            encrypted = my_IDEA.encrypt(plain)
+        elif ask == 'n':
+            plain = input("Enter plain (ASCII):\t\t")
+            plain = int.from_bytes(plain.encode("ASCII"), 'big')
+        
         my_IDEA = IDEA(key)
         encrypted = my_IDEA.encrypt(plain)
 
         print(f"Encrypted:\thex: {hex(encrypted)}\n")
 
-        ask = input("Decrypt / Check? (y/n)\t\t\t")
+        ask = input("Decrypt / Check? (y/n)\t\t")
         if ask == 'y':
             decrypted = my_IDEA.decrypt(encrypted)
             print(f"\nDecrypted:\thex: {hex(decrypted)}")
