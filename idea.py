@@ -114,8 +114,8 @@ class IDEA:
         p2 = (plain >> 32) & 0xFFFF
         p3 = (plain >> 16) & 0xFFFF
         p4 = plain & 0xFFFF
-        print(f"Plain:\t\thex: {hex(plain)}")
-        print(f"\t\tuni: {plain.to_bytes(64, 'big').decode('ASCII')}\n")
+        #print(f"Plain:\t\thex: {hex(plain)}")
+        #print(f"\t\tuni: {plain.to_bytes(64, 'big').decode('ASCII')}\n")
 
         # All 8 rounds
         for i in range(8):
